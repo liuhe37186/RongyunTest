@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="txcap.com.rongyuntest.LoginActivity">
+
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="151dp"
+        android:layout_height="51dp"
+        android:text="登录用户1"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="151dp"
+        android:layout_height="51dp"
+        android:text="登录用户2"
+        tools:layout_editor_absoluteY="67dp"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="151dp"
+        android:layout_height="51dp"
+        android:text="打开会话列表"
+        tools:layout_editor_absoluteY="118dp"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="151dp"
+        android:layout_height="51dp"
+        android:text="打开会话详情"
+        tools:layout_editor_absoluteY="169dp"
+        tools:layout_editor_absoluteX="16dp" />
+
+
+
+
+
+</LinearLayout>

@@ -2,8 +2,8 @@ package txcap.com.rongyuntest;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +11,9 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.rong.imkit.DefaultExtensionModule;
+import io.rong.imkit.IExtensionModule;
+import io.rong.imkit.RongExtensionManager;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.UserInfo;
@@ -80,6 +83,7 @@ public class LoginActivity extends AppCompatActivity implements RongIM.UserInfoP
                         b1.setText("连接服务器成功");
                         b2.setEnabled(false);
                     }
+                    setMyExtensionModule();
 
                 }
 
@@ -93,6 +97,25 @@ public class LoginActivity extends AppCompatActivity implements RongIM.UserInfoP
                 }
             });
 //        }
+    }
+
+
+    public static void setMyExtensionModule() {
+
+        List<IExtensionModule> moduleList = RongExtensionManager.getInstance().getExtensionModules();
+        IExtensionModule defaultModule = null;
+        if (moduleList != null) {
+            for (IExtensionModule module : moduleList) {
+                if (module instanceof DefaultExtensionModule) {
+                    defaultModule = module;
+                    break;
+                }
+            }
+            if (defaultModule != null) {
+                RongExtensionManager.getInstance().unregisterExtensionModule(defaultModule);
+                RongExtensionManager.getInstance().registerExtensionModule(new MyExtensionModule());
+            }
+        }
     }
 
     @Override
